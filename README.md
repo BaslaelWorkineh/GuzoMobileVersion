@@ -45,13 +45,13 @@
 
 ### ⚙️ Tech Stack
 
-Frontend: React.js
+Frontend: React.js and React Native
 
 Backend: Node.js, Express.js
 
 Database: MongoDB
 
-Deployment: Netlify || Vercel
+Deployment: Netlify || Vercel || Google PlayStore
 
 ## 👥 Meet the Team
 
