@@ -31,6 +31,7 @@ function OauthPage() {
             source={{ uri: 'https://images.saymedia-content.com/.image/c_limit%2Ccs_srgb%2Cq_auto:eco%2Cw_700/MTgyNjk2MTU2MTMwNzgwNTc5/in-his-masterpieces.webp' }}
             style={styles.backgroundImage}
             resizeMode="cover"
+            blurRadius={100}
         >
             <View style={styles.container}>
                 {signInOption === 'email' && (
@@ -68,7 +69,7 @@ function OauthPage() {
                                 withCallingCode
                                 countryCode={countryCode}
                                 onSelect={handleSelectCountry}
-                                visible
+                                
                                 
                             /></View>
                             
