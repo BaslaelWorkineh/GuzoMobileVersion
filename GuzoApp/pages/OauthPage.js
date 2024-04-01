@@ -28,7 +28,7 @@ function OauthPage() {
 
     return (
         <ImageBackground
-            source={{ uri: 'https://images.saymedia-content.com/.image/c_limit%2Ccs_srgb%2Cq_auto:eco%2Cw_700/MTgyNjk2MTU2MTMwNzgwNTc5/in-his-masterpieces.webp' }}
+            source={{ uri: 'https://wallpapers-clan.com/wp-content/uploads/2023/07/river-and-clouds-aesthetic-wallpaper.jpg' }}
             style={styles.backgroundImage}
             resizeMode="cover"
             blurRadius={100}
@@ -52,10 +52,10 @@ function OauthPage() {
                         <Text style={styles.orText}>Or sign in with</Text>
                         <TouchableOpacity
                             activeOpacity={0.8}
-                            style={styles.phoneButton}
+                            style={styles.optButton}
                             onPress={() => handleSignInOption('phone')}
                         >
-                            <Text style={styles.buttonText}>Sign in with Phone Number</Text>
+                            <Text style={styles.buttonText}>Phone Number</Text>
                         </TouchableOpacity>
                     </>
                 )}
@@ -87,10 +87,10 @@ function OauthPage() {
                             <Text style={styles.orText}>Or sign in with</Text>
                             <TouchableOpacity
                                 activeOpacity={0.8}
-                                style={styles.phoneButton}
+                                style={styles.optButton}
                                 onPress={() => handleSignInOption('email')}
                             >
-                                <Text style={styles.buttonText}>Sign in with Email</Text>
+                                <Text style={styles.buttonText}>Email</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -161,13 +161,10 @@ const styles = StyleSheet.create({
         color: '#fff',
         marginBottom: 10,
     },
-    emailButton: {
-        backgroundColor: '#28a745', // Green color for email sign in
-    },
-    phoneButton: {
+    optButton: {
         width: '80%',
         height: 50,
-        backgroundColor: '#007bff',
+        backgroundColor: '#2E8B57', // Nature green color
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 5,
