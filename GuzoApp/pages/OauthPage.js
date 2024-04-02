@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
-import { Text, View, TextInput, TouchableOpacity, StyleSheet, ImageBackground, Image } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Text, View, TextInput, TouchableOpacity, StyleSheet, StatusBar, Image } from 'react-native';
 import CountryPicker from 'react-native-country-picker-modal';
 
 function OauthPage() {
     const [signInOption, setSignInOption] = useState('email');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [countryCode, setCountryCode] = useState('US');
+
+    useEffect(() => {
+        // Change the navigation bar color
+        StatusBar.setBackgroundColor('#000000');
+        StatusBar.setBarStyle('light-content');
+    }, []);
 
     const handleSignInOption = (option) => {
         setSignInOption(option);
@@ -29,6 +35,7 @@ function OauthPage() {
     return (
 
         <View style={styles.container}>
+            <Text style={styles.close}>X</Text>
             <Text style={styles.title}>Sign in or create an account</Text>
             <Text style={styles.subtitle}>Unlock Ethiopia's travel with one account across Ethiopia. Hotels.com, and Vibo.</Text>
             <TouchableOpacity style={styles.googleSignInButton}>
@@ -78,11 +85,26 @@ function OauthPage() {
             >
                 <Text style={styles.buttonText}>Sign in with {signInOption === 'email' ? 'Phone number' : 'Email'}</Text>
             </TouchableOpacity>
-            <Text style={styles.termsText}>By continuing, you have read and agree to our <Text style={styles.termsLink}>terms and conditions</Text> <Text style={styles.termsLink}>Privacy Statement</Text> and  <Text style={styles.termsLink}>Meheja's reward terms and conditions</Text></Text>
-            <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', width: '100%' }} >
-                <Text style={styles.termsText}>Meheja</Text>
-                <Text style={styles.termsText}>Basketo</Text>
-                <Text style={styles.termsText}>Guzo</Text>
+            <Text style={styles.termsText}>By continuing, you have read and agree to our <Text style={styles.termsLink}>terms and conditions</Text>, <Text style={styles.termsLink}>Privacy Statement</Text> and  <Text style={styles.termsLink}>Meheja's reward terms and conditions</Text></Text>
+            <View style={{ width: "100%" }}>
+
+                <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', width: '100%' }}>
+                    <View style={{alignItems:'center'}}>
+                        <Image source={{ uri: 'https://pbs.twimg.com/profile_images/1666433378814443521/jqnB7-9I_400x400.jpg' }} style={styles.logo} />
+                        <Text style={styles.termsText}>Feres</Text>
+                    </View>
+                    <View style={{alignItems:'center'}}>
+                        <Image source={{ uri: 'https://play-lh.googleusercontent.com/i57WfjluhSe3fMFjTs4FWLW2zOSdHCxBE5_uyetjhtE4FzGlxjq65dVjk5RoRNUM-g' }} style={styles.logo} />
+                        <Text style={styles.termsText}>Ride</Text>
+                    </View>
+                    <View style={{alignItems:'center'}}>
+                        <Image source={{ uri: 'https://img.freepik.com/free-vector/detailed-travel-logo_23-2148627268.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1712016000&semt=ais' }} style={styles.logo} />
+                        <Text style={styles.termsText}>Meheja</Text>
+                    </View>
+
+
+                </View>
+
             </View>
         </View>
 
@@ -100,6 +122,13 @@ const styles = StyleSheet.create({
         height: '100%'
 
     },
+    close: {
+        color: '#fff',
+        fontSize: 24,
+        fontFamily: 'Resumeb',
+        width: '100%',
+        right: '0%'
+    },
     title: {
         fontSize: 32,
         fontWeight: 'bold',
@@ -114,7 +143,7 @@ const styles = StyleSheet.create({
         width: '80%',
         height: 50,
         backgroundColor: '#3D84F0',
-        flexDirection:'row',
+        flexDirection: 'row',
         justifyContent: 'space-evenly',
         alignItems: 'center',
         borderRadius: 5,
@@ -124,11 +153,11 @@ const styles = StyleSheet.create({
         width: 32,
         height: 32,
         marginRight: 10,
-        borderRadius:5
+        borderRadius: 5
     },
     googleButtonText: {
         fontSize: 16,
-        color:'#fff'
+        color: '#fff'
     },
     orText: {
         color: '#fff',
@@ -161,8 +190,8 @@ const styles = StyleSheet.create({
         width: '80%',
         height: 50,
         backgroundColor: 'transparent', // Nature green color
-        borderWidth:1,
-        borderColor:'white',
+        borderWidth: 1,
+        borderColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 5,
@@ -200,6 +229,12 @@ const styles = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    logo: {
+        width: 40,
+        height: 40,
+        resizeMode: 'contain',
+        borderRadius: 50
     },
 });
 
