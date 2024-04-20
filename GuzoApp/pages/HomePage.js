@@ -1,10 +1,11 @@
 import React from 'react'
 
+import { Text, View } from 'react-native'
 function HomePage() {
   return (
-    <div>
-      
-    </div>
+    <View>
+      <Text>hello world</Text>
+    </View>
   )
 }
 
