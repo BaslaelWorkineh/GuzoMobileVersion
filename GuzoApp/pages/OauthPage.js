@@ -45,7 +45,8 @@ function OauthPage() {
   };
 
   return (
-    <View>
+    <>
+    
       {!loggedinPage && (
         <View style={styles.container}>
           <TouchableOpacity onPress={closeClicked}>
@@ -178,7 +179,7 @@ function OauthPage() {
         </View>
       )}
       {loggedinPage && <HomePage />}
-    </View>
+      </>
   );
 }
 
@@ -196,8 +197,7 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 24,
     fontFamily: "Resumeb",
-    width: "100%",
-    right: "0%",
+    right:'50%',
   },
   title: {
     fontSize: 32,
